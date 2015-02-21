@@ -19,7 +19,7 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/lst_item_Name"
+            android:id="@+id/txt_nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -35,7 +35,7 @@
 
 
         <TextView
-            android:id="@+id/text_ingredientes"
+            android:id="@+id/txt_ingredientes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
         </TextView>
 
         <TextView
-            android:id="@+id/text_preparacion"
+            android:id="@+id/txt_preparacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -53,8 +53,8 @@
         </TextView>
 
         <Button
-        android:id="@+id/lst_item_Delete"
-        android:text="Delete"
+        android:id="@+id/btn_ver"
+        android:text="Ver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

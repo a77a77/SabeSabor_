@@ -11,6 +11,12 @@ public class Receta {
     private String tiempoEstimado;
     private int rating;
 
+    public Receta(String nombre, String ingrediente_cantidad, String preparacion) {
+        this.nombre = nombre;
+        this.ingrediente_cantidad = ingrediente_cantidad;
+        this.preparacion = preparacion;
+    }
+
     public int getRating() {
         return rating;
     }

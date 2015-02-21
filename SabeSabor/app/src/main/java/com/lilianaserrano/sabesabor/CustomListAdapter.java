@@ -10,14 +10,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mp on 21/02/2015.
  */
 public class CustomListAdapter extends ArrayAdapter<String> {
     private Context appContext = null;
-    private  ArrayList<String> items = null;
-    public CustomListAdapter(Context context, int textViewResourceId,  ArrayList<String> items){
+    private  List<Receta> items = null;
+    public CustomListAdapter(Context context, int textViewResourceId,  List items){
         super(context,textViewResourceId,items);
         this.appContext = context;
         this.items=items;
@@ -30,22 +31,31 @@ public class CustomListAdapter extends ArrayAdapter<String> {
             LayoutInflater vi = (LayoutInflater) appContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = vi.inflate(R.layout.list_item, null);
         }
-        String o = items.get(position);
+        Receta o = items.get(position);
         if (o != null) {
-            TextView name = (TextView) v.findViewById(R.id.lst_item_Name);
-            Button btnDelete = (Button)v.findViewById(R.id.lst_item_Delete);
+            TextView name = (TextView) v.findViewById(R.id.txt_nombre);
+            TextView ingredientes = (TextView) v.findViewById(R.id.txt_ingredientes);
+            TextView preparacion = (TextView) v.findViewById(R.id.txt_preparacion);
+            Button btnVer = (Button)v.findViewById(R.id.btn_ver);
 
-            btnDelete.setOnClickListener(new View.OnClickListener() {
+            btnVer.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(appContext,"Hellow this is clicked", Toast.LENGTH_LONG).show();
+                    Toast.makeText(appContext, "Hellow this is clicked", Toast.LENGTH_LONG).show();
 
                 }
             });
 
             if (name != null) {
-                name.setText(o);                            }
+                name.setText(o.getNombre());
+            }
+            if (ingredientes != null) {
+                ingredientes.setText(o.getIngrediente_cantidad());
+            }
+            if (preparacion != null) {
+                preparacion.setText(o.getPreparacion());
+            }
 
         }
         return v;

@@ -9,22 +9,23 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
 
     private ListView lv;
     private EditText et;
-    private ArrayList<String> valores = new ArrayList<String>();
+    private List<Receta> valores = new ArrayList<Receta>();
     //private String listview_array[] = { "ONE", "TWO", "THREE", "FOUR", "FIVE","SIX", "SEVEN", "EIGHT", "NINE", "TEN" };
-    private ArrayList<String> array_sort= new ArrayList<String>();
+    private ArrayList<Receta> array_sort= new ArrayList<Receta>();
     int textlength=0;
 
     public void onCreate(Bundle savedInstanceState)
     {
-        valores.add("ONE");
-        valores.add("TWO");
-        valores.add("THREE");
+        valores.add(new Receta("Spaguetti", "ingredientes", "moler"));
+        valores.add(new Receta("Burritos", "una libra", "asar"));
+        valores.add(new Receta("Arroz Especial", "una bolsa de leche", "batir"));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -60,11 +61,11 @@ public class MainActivity extends Activity {
                 array_sort.clear();
                 for (int i = 0; i < valores.size(); i++)
                 {
-                    if (textlength <= valores.get(i).length())
+                    if (textlength <= valores.get(i).getNombre().length())
                     {
                         if(et.getText().toString().equalsIgnoreCase(
                                 (String)
-                                        valores.get(i).subSequence(0,
+                                        valores.get(i).getNombre().subSequence(0,
                                                 textlength)))
                         {
                             array_sort.add(valores.get(i));
