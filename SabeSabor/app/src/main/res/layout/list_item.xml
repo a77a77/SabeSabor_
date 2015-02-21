@@ -1,29 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <TextView
-    android:id="@+id/lst_item_Name"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:minWidth="120px"
-    >
-    </TextView>
-<TextView
-android:id="@+id/lst_item_Mobile"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10px"
-    android:minWidth="120px"
-    >
-    </TextView>
-<Button
-android:id="@+id/lst_item_Delete"
-    android:text="Delete"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:width="80px"    >
-    </Button>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/imageView"
+        android:src="@drawable/uno"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/lst_item_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            >
+        </TextView>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            android:layout_weight="1" />
+
+
+        <TextView
+            android:id="@+id/text_ingredientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_preparacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            >
+        </TextView>
+
+        <Button
+        android:id="@+id/lst_item_Delete"
+        android:text="Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:width="80px"    >
+        </Button>
+
+    </LinearLayout>
 
 </LinearLayout>

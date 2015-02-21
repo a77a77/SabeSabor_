@@ -71,7 +71,6 @@ public class MainActivity extends Activity {
                         }
                     }
                 }
-                lv.setAdapter(new ArrayAdapter<String> (MainActivity.this,android.R.layout.simple_list_item_1, array_sort));
                 lv.setAdapter(new CustomListAdapter(MainActivity.this, R.layout.list_item, array_sort ));
 
             }

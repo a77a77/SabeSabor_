@@ -33,7 +33,6 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         String o = items.get(position);
         if (o != null) {
             TextView name = (TextView) v.findViewById(R.id.lst_item_Name);
-            TextView mobile = (TextView) v.findViewById(R.id.lst_item_Mobile);
             Button btnDelete = (Button)v.findViewById(R.id.lst_item_Delete);
 
             btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -47,9 +46,7 @@ public class CustomListAdapter extends ArrayAdapter<String> {
 
             if (name != null) {
                 name.setText(o);                            }
-            if(mobile != null){
-                mobile.setText(o);
-            }
+
         }
         return v;
     }
